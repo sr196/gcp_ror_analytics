@@ -1,0 +1,25 @@
+staging:
+ target: dev
+ outputs:
+  dev:
+    type: bigquery
+    method: service-account
+    keyfile: /usr/local/airflow/include/gcp/service_account.json
+    project: leafy-loader-456407-i6
+    dataset: staging
+    threads: 1
+    timeout_seconds: 300
+    location: US
+
+transformed:
+ target: dev
+ outputs:
+  dev:
+    type: bigquery
+    method: service-account
+    keyfile: /usr/local/airflow/include/gcp/service_account.json
+    project: leafy-loader-456407-i6
+    dataset: transformed
+    threads: 1
+    timeout_seconds: 300
+    location: US

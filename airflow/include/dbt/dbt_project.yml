@@ -1,0 +1,6 @@
+name: 'ror_analysis'
+profile: 'transformed'
+
+models:
+  retail:
+    materialized: table

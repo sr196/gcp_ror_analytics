@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: staging
+    database: leafy-loader-456407-i6
+    schema: staging
+    tables:
+      - name: sample_data
