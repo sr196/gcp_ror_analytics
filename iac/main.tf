@@ -18,3 +18,9 @@ resource "google_storage_bucket" "main" {
         log_bucket = "access_logs"
     }
 } 
+
+module "cloud_functions" {
+  source = "./cloud_functions"
+  project_id = var.project_id
+  service_account_email = var.service_account_email
+}

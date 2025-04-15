@@ -51,3 +51,9 @@ variable "buckets" {
     }
   }
 }
+
+
+variable "service_account_email" {
+  type = string
+  default = "dw-ror-analytics@leafy-loader-456407-i6.iam.gserviceaccount.com"
+}
