@@ -1,4 +1,7 @@
 name: 'ror_analysis'
+version: '1.0.0'
+
+config-version: 2
 profile: 'transformed'
 
 models:

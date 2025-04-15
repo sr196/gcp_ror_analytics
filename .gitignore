@@ -19,3 +19,4 @@ iac/key.json
 iac/*.tfstate
 iac/*.tfstate.backup
 iac/.venv
+key.json
