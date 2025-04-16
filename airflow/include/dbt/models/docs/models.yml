@@ -1,0 +1,29 @@
+# models/docs/models.yml
+version: 2
+
+models:
+  - name: entity_overview
+    description: Consolidated view of entity core attributes
+    columns:
+      - name: id
+        description: Primary entity identifier
+        tests:
+          - unique
+          - not_null
+
+  - name: relationship_network
+    description: Graph structure of entity relationships
+    columns:
+      - name: source_id
+        description: Origin entity ID
+      - name: target_id
+        description: Related entity ID
+
+  - name: geospatial_analysis
+    description: Materialized view for spatial queries
+    config:
+      grants:
+        select: ['REPORTING_ROLE']
+
+  - name: external_id_master
+    description: Authorized view for external system access

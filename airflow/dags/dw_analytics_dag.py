@@ -13,8 +13,8 @@ from cosmos.config import RenderConfig
 )
 def run_analytics_dbt_models():
 
-    ror_analytics = DbtTaskGroup(
-            group_id='ror_analytics',
+    dimentional_models = DbtTaskGroup(
+            group_id='dimentional_models',
             project_config=DBT_PROJECT_CONFIG,
             profile_config=DBT_CONFIG,
             render_config=RenderConfig(
@@ -22,7 +22,17 @@ def run_analytics_dbt_models():
                 select=['path:models/marts']
             )
         )
+    
+    analytical_models = DbtTaskGroup(
+            group_id='analytical_models',
+            project_config=DBT_PROJECT_CONFIG,
+            profile_config=DBT_CONFIG,
+            render_config=RenderConfig(
+                load_method=LoadMode.DBT_LS,
+                select=['path:models/analytical_views']
+            )
+        )
 
-    ror_analytics
+    dimentional_models >> analytical_models
     
 run_analytics_dbt_models()

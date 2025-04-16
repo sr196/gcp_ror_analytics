@@ -20,3 +20,5 @@ iac/*.tfstate
 iac/*.tfstate.backup
 iac/.venv
 key.json
+**/__pycache__/*
+**/logs/*
